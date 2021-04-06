@@ -97,7 +97,7 @@ label{
 
         .deckCard{
             position: absolute;
-            top: 60%;
+            /* top: 60%; */
             background-color: $cardGrey;
             width: 80% !important;
             padding: 15px;
@@ -213,7 +213,7 @@ label{
 
 
 .deckCard:nth-child(1){
-    margin-left: 10%;
+    /* margin-left: 10%; */
     bottom: -50%;
     margin-top: 20%;
     background-color: lighten( $cardGrey, 30% );
@@ -228,6 +228,7 @@ label{
 
 .deckCard:nth-child(3){
     left: 0px;
+    bottom: -33%;
     background-color: #959595;
 }
 }

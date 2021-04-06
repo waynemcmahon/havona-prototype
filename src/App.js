@@ -18,8 +18,6 @@ function App() {
     opacity: rightMenuVisible ? 1 : 0,
     transform: rightMenuVisible ? `translateX(0%)` : `translateX(-300px)`
   });
-
-  
   
   const [sidebarToggle, setSidebarToggle] = useState(false);
   const [sidebarMenuVisible, setSidebarMenuVisible] = useState(false);
@@ -28,8 +26,6 @@ function App() {
     opacity: sidebarToggle ? 1 : 0,
     transform: sidebarToggle ? `translateX(0%)` : `translateX(-300px)`
   });
-
-  console.log(sidebarMenuVisible);
 
   const sidebarToggleHandler = () => {
     setSidebarToggle(!sidebarToggle);        

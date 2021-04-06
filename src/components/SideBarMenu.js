@@ -12,8 +12,6 @@ export const SideBarMenu = ({sidebarToggle, sidebarMenuAnimation}) => {
         active = "active"
     }
 
-    console.log(sidebarMenuAnimation);
-
     return(
         <animated.div className="sideBarMenu"  style={sidebarMenuAnimation}>
             <FontAwesomeIcon icon={faCog}/>

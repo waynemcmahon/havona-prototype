@@ -46,18 +46,16 @@ render(){
       
         <div className="deckCards">
         {data.map(e => (
-          
-          <div className="deckCard">
           <Swipeable onSwipe={this.handleOnSwipe}>
-            <Card      
-              key={e.id}          
-              name={e.name}
-              type={e.type}
-              text={e.text}
-            /> 
-          </Swipeable>
-          
-        </div>
+          <div className="deckCard">
+              <Card      
+                key={e.id}          
+                name={e.name}
+                type={e.type}
+                text={e.text}
+              /> 
+          </div>
+        </Swipeable>
          
           
         
