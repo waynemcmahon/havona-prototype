@@ -10,7 +10,6 @@ import Deck from './components/Deck'
 import { SideMenu } from './components/SideMenu'
 import { SideBarMenu } from './components/SideBarMenu'
 import data from "./data";
-import { BeeSlider } from "./components/BeeSlider";
 
 function App() {
   const [menuToggle, setMenuToggle] = useState(false);
