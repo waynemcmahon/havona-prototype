@@ -18,13 +18,14 @@ export const Deck = ({cardDeck, setCardDeck}) => {
       setCardDeck(array);
   }
 
-/*   const handleOnSwipe = (swipeDirection, onAfterSwipe) => {
+  const handleOnSwipe = (swipeDirection, onAfterSwipe) => {
+    console.log();
     console.log(direction);
     if (swipeDirection === direction.RIGHT || swipeDirection === direction.LEFT) {
       nextCard();
       return;
     }
-  } */
+  }
 
   /* useGesture({
     onDrag: ({ args: [index], direction: [xDir], offset: [dx], velocity, down }) => {
@@ -57,10 +58,11 @@ export const Deck = ({cardDeck, setCardDeck}) => {
                     }}
                 >
                   <Card 
-                  card={card}             
+                    card={card}             
                     name={card.name}
                     type={card.type}
                     text={card.text}
+                    onClick={() => handleOnSwipe()}
                   /> 
                 </div>
             :

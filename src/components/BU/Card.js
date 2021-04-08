@@ -70,7 +70,6 @@ export const Card = ({ card, onTap, handleIfNextCard,/*  showCardAnimation, */ /
 
   const handleCardUp = () => {
     setShowCard(!showCard);   
-    console.log(showCardAnimation); 
   }
 
 
