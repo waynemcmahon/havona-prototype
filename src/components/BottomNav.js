@@ -3,12 +3,12 @@ import { faBars, faCommentAlt, faShareAlt } from '@fortawesome/free-solid-svg-ic
 import { faInstagram, faSoundcloud, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 
 
-    export const BottomNav = ({menuToggle, setMenuToggle, rightMenuVisible, setRightMenuVisible}) => {
+    export const BottomNav = ({menuToggle, setMenuToggle, rightMenuVisible, setRightMenuVisible, blurVisible, setBlurVisible}) => {
 
     const clickMenu = () => {
         setMenuToggle(!menuToggle);
         setRightMenuVisible(!rightMenuVisible);
-               
+        setBlurVisible(!blurVisible)
     }
 
     return(

@@ -1,55 +1,80 @@
-import React, { useState, useRef, Component } from 'react';
+import React, { useState, useRef } from 'react';
+import { useSpring, useSprings, animated} from 'react-spring'
+import { useDrag, useGesture } from 'react-use-gesture'
+import { Swipeable, direction } from 'react-deck-swiper';
 import data from "../data";
 import { Card } from './Card'
-import { useSpring, animated } from 'react-spring'
+import { getNodeText } from '@testing-library/dom';
 
-const Deck = () => {
-  let [cardDeck, setCardDeck] = useState(data);
-  //let [isNextCard, setIsNextCard] = useState(false);
+export const Deck = ({cardDeck, setCardDeck}) => {
+  //let [cardDeck, setCardDeck] = useState(deck)
+  let [touchPosition, setTouchPosition] = useState({ x: 0, y: 0})
+  let imageRef = useRef();
 
-  let array = cardDeck;
-
-  const handleIfNextCard= (e) => {
-    if(e){
+  const nextCard = () => {
+      let array = cardDeck;
       let firstCard = array.pop();
       array.unshift(firstCard);
       setCardDeck(array);
-      //setIsNextCard(false);
-      console.log(cardDeck);
+  }
+
+/*   const handleOnSwipe = (swipeDirection, onAfterSwipe) => {
+    console.log(direction);
+    if (swipeDirection === direction.RIGHT || swipeDirection === direction.LEFT) {
+      nextCard();
+      return;
     }
-  }
+  } */
 
-  const [showCard, setShowCard] = useState(false);
+  /* useGesture({
+    onDrag: ({ args: [index], direction: [xDir], offset: [dx], velocity, down }) => {
+      const trigger = velocity > 0.2
+      const dir = xDir < 0 ? -1 : 1 
+      console.log(index);
+      if (!down && trigger) gone.add(index)
 
-  const showCardAnimation = useSpring({
-    opacity: showCard ? 1 : 0,
-    bottom: showCard ? `0` : `-33%`
-  });
-
-  const handleCardUp = () => {
-    setShowCard(!showCard);    
-    console.log(showCardAnimation);  
-  }
-
-
+        setTouchPosition({x: dx})
+      
+        if(dir === -1 || dir === 1){
+          //nextCard();
+        }
+       
+    },
+    }, {
+        domTarget: imageRef
+    }); */
   return (
-    <div className='deckContainer'>
-      <div className="deckCards" style={showCardAnimation}>
-      {cardDeck.map((card) => (
-        <Card 
-        key={card.id}
-        card={card}
-        //setIsNextCard={setIsNextCard}
-        //isNextCard={isNextCard}
-        handleIfNextCard={handleIfNextCard}
-        showCardAnimation={showCardAnimation}
-        handleCardUp={handleCardUp}
-        >
-        </Card>
-      ))}
+    <div className="deckContainer">
+      <div className="deckCards" ref={imageRef}>
+        {cardDeck.map(card => (
+          card.id === 2
+               ? <div
+                  key = {card.id}
+                  style={{              
+                        left: touchPosition.x,
+                        width: "auto",
+                        position: "absolute"
+                    }}
+                >
+                  <Card 
+                  card={card}             
+                    name={card.name}
+                    type={card.type}
+                    text={card.text}
+                  /> 
+                </div>
+            :
+            <div key={card.id}  >
+              <Card      
+                card={card}  
+                name={card.name}
+                type={card.type}
+                text={card.text}
+              /> 
+            </div>
+        ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Deck;
