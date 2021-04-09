@@ -7,9 +7,11 @@ import { Profile } from './components/Profile';
 import { useSpring, animated } from 'react-spring'
 import { BottomNav } from './components/BottomNav'
 import Deck from './components/Deck'
+import DeckSplide from './components/DeckSplide'
 import { SideMenu } from './components/SideMenu'
 import { SideBarMenu } from './components/SideBarMenu'
 import data from "./data";
+//import { BeeSlider } from './components/BU/BeeSlider'
 
 function App() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -67,6 +69,7 @@ function App() {
           //handleIfNextCard={handleIfNextCard}
       />
       </animated.div>
+      <DeckSplide/>
      
      <animated.div className="blurOverlay" style={blurAnimation}></animated.div>
      <SideMenu rightMenuAnimation={rightMenuAnimation}/>  

@@ -1,18 +1,12 @@
-import { Helmet } from "react-helmet";
+/* import { Helmet } from "react-helmet";
 
-/* const beeJs = (
-    <ScriptTag type="text/javascript" src="../plugins/bee3dSlider/src/scripts/bee3D.js" />
-    )
-const classie = (
-    <ScriptTag type="text/javascript" src="../plugins/bee3dSlider/src/scripts/_lib/classie.js"/>
-) */
 export const BeeSlider = () => {
-    /* var demo = document.getElementById('demo');
+    var demo = document.getElementById('demo');
 
     var slider = new Bee3D(demo, {
       effect: 'concave',
       // ... more options here
-    }); */
+    });
 
 return(
     <div>
@@ -30,3 +24,4 @@ return(
         
     )
 }
+ */

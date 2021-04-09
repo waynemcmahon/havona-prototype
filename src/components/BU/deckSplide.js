@@ -4,7 +4,7 @@ import { useSpring} from 'react-spring'
 import { ToggleCard, TinderLikeCard, StackCard, Tiner } from 'react-stack-cards'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
-const Deck = (cardDeck, setCardDeck, handleIfNextCard, props) => {
+const DeckSplide = (cardDeck, setCardDeck, handleIfNextCard, props) => {
   let [isOpen, setIsOpen] = useState(false);
   let [directionToggle, setDirectionToggle] = useState("sideSlide");
   let [directionTinder, setDirectionTinder] = useState("swipeCornerDownRight");
@@ -116,4 +116,4 @@ const Deck = (cardDeck, setCardDeck, handleIfNextCard, props) => {
   ); */
 };
 
-export default Deck;
+export default DeckSplide;
