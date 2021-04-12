@@ -1,5 +1,5 @@
 import { useSpring, animated } from 'react-spring'
-import { Frame, Color, useMotionValue, useTransform, useAnimation } from 'framer';
+/* import { Frame, Color, useMotionValue, useTransform, useAnimation } from 'framer'; */
 import { React, useState } from "react"
 import { Bio } from './card_types/Bio'
 import { Music } from './card_types/Music'
@@ -10,8 +10,8 @@ import { Text } from './card_types/Text'
 
 export const Card = ({ card, onTap, handleIfNextCard,/*  showCardAnimation, */ /* handleCardUp */}) => {
   // To move the card as the user drags the cursor
-  const motionValue = useMotionValue(0);
-
+/*   const motionValue = useMotionValue(0);
+ */
   let [cardDetails, setCardDetails] = useState(card);
 
   const [showCard, setShowCard] = useState(false);
@@ -22,23 +22,23 @@ export const Card = ({ card, onTap, handleIfNextCard,/*  showCardAnimation, */ /
   
    
   // To rotate the card as the card moves on drag
-  const rotateValue = useTransform(motionValue, [-200, 200], [-50, 50]);
+/*   const rotateValue = useTransform(motionValue, [-200, 200], [-50, 50]); */
   
   // To decrease opacity of the card when swipped
   // on dragging card to left(-200) or right(200)
   // opacity gradually changes to 0
   // and when the card is in center opacity = 1
-  const opacityValue = useTransform(
+/*   const opacityValue = useTransform(
     motionValue,
     [-20, -15, 0, 15, 20],
     [0, 1, 1, 1, 0]
-  );
+  ); */
   
   // Framer animation hook
-  const animControls = useAnimation();
+ /*  const animControls = useAnimation();
 
   const darkBlue = Color("#0055FF")
-  const blue = Color.lighten(darkBlue, 10)
+  const blue = Color.lighten(darkBlue, 10) */
   
   // Some styling for the card
   // it is placed inside the card component

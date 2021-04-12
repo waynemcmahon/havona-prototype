@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useSpring, useSprings, animated} from 'react-spring'
 import { useDrag, useGesture } from 'react-use-gesture'
-import { Swipeable, direction } from 'react-deck-swiper';
+/* import { Swipeable, direction } from 'react-deck-swiper'; */
 import data from "../data";
 import { Card } from './Card'
 import { getNodeText } from '@testing-library/dom';
@@ -17,7 +17,7 @@ export const Deck = ({cardDeck, setCardDeck}) => {
       array.unshift(firstCard);
       setCardDeck(array);
   }
-
+/* 
   const handleOnSwipe = (swipeDirection, onAfterSwipe) => {
     console.log();
     console.log(direction);
@@ -26,7 +26,7 @@ export const Deck = ({cardDeck, setCardDeck}) => {
       return;
     }
   }
-
+ */
   /* useGesture({
     onDrag: ({ args: [index], direction: [xDir], offset: [dx], velocity, down }) => {
       const trigger = velocity > 0.2
@@ -62,7 +62,7 @@ export const Deck = ({cardDeck, setCardDeck}) => {
                     name={card.name}
                     type={card.type}
                     text={card.text}
-                    onClick={() => handleOnSwipe()}
+                    //onClick={() => handleOnSwipe()}
                   /> 
                 </div>
             :
