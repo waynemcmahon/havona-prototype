@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { ToggleCard, TinderLikeCard, StackCard } from 'react-stack-cards'
-import { Swipeable, direction } from 'react-deck-swiper';
+import React from 'react'
+import { TinderLikeCard } from 'react-stack-cards'
 
 class DeckStackCards extends React.Component {
   constructor(props){

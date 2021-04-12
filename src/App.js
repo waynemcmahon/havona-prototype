@@ -1,13 +1,9 @@
 import { React, useState } from 'react'
-import ReactDOM from "react-dom";
-import logo from './logo.svg';
 import './App.css';
 import './sass/style.scss';
 import { Profile } from './components/Profile';
 import { useSpring, animated } from 'react-spring'
 import { BottomNav } from './components/BottomNav'
-import Deck from './components/Deck'
-//import DeckSplide from './components/DeckSplide'
 import { SideMenu } from './components/SideMenu'
 import { SideBarMenu } from './components/SideBarMenu'
 import data from "./data";
