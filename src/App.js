@@ -11,11 +11,12 @@ import Deck from './components/Deck'
 import { SideMenu } from './components/SideMenu'
 import { SideBarMenu } from './components/SideBarMenu'
 import data from "./data";
-//import { BeeSlider } from './components/BU/BeeSlider'
+import profileImageBlur from './images/profile/profilebg_blur.png';
 
 function App() {
   const [menuToggle, setMenuToggle] = useState(false);
   const [rightMenuVisible, setRightMenuVisible] = useState(false);
+  const [displayCard, setDisplayCard] = useState(false);
 
   let [cardDeck, setCardDeck] = useState(data);
 
@@ -36,7 +37,8 @@ function App() {
   
   const blurAnimation = useSpring({
     display: blurVisible ? "block" : "none",
-    opacity: blurVisible ? 1 : 0
+    opacity: blurVisible ? 1 : 0,
+    backgroundImage: "url(" + { profileImageBlur } + ")"
   });
   
 
@@ -44,6 +46,14 @@ function App() {
     setSidebarToggle(!sidebarToggle);      
     setBlurVisible(!blurVisible);
     console.log("test");
+  }
+
+  const topClickToggleHandler = () => {
+    setBlurVisible(!blurVisible);
+    setDisplayCard(!displayCard);
+  }
+  const bottomClickToggleHandler = () => {
+    setBlurVisible(!blurVisible);
   }
 
 /*   const handleIfNextCard= () => {
@@ -58,19 +68,15 @@ function App() {
 
   return (
     <animated.div className="App" >
-    {/* <BeeSlider/> */}
-     {/*  <main>
-        <Toggle />
-      </main> */}
+    {/* <DeckStackCards/> */}
       <animated.div>
         <Profile
           cardDeck={cardDeck}
           setCardDeck={setCardDeck}
+          displayCard={displayCard}
           //handleIfNextCard={handleIfNextCard}
       />
       </animated.div>
-      {/* <DeckSplide/> */}
-     
      <animated.div className="blurOverlay" style={blurAnimation}></animated.div>
      <SideMenu rightMenuAnimation={rightMenuAnimation}/>  
      <SideBarMenu 
@@ -87,6 +93,8 @@ function App() {
         blurVisible={blurVisible}
       /> 
       <div className="sidebarMenuBtn" onClick={() => sidebarToggleHandler()}></div>
+      {/* <div className="cardTopClick" onClick={() => topClickToggleHandler()}></div>
+      <div className="cardBottomClick" onClick={() => bottomClickToggleHandler()}></div> */}
     </animated.div>
   );
 }

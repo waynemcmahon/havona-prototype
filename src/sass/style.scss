@@ -40,6 +40,23 @@ label{
     overflow: hidden;
 } */
 
+.cardTopClick{
+    position: absolute;
+    top: 0;
+    left: 15px;
+    bottom: 30%;
+    right: 0;
+}
+
+.cardBottomClick{
+    position: absolute;
+    top: 80%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+}
+
 .card-item{
     background-color: red;
 }
@@ -82,7 +99,6 @@ label{
     bottom: 0;
     right: 0;
 }
-
 .profileHeadshot{
     position: absolute;
 }
@@ -120,7 +136,7 @@ label{
             top: 60%; */
             position: fixed;
             bottom: 0;
-            background-color: $cardGrey;
+            //background-color: $cardGrey;
             width: 80% !important;
             padding: 15px;
             border-top-right-radius: 50px;
@@ -129,6 +145,123 @@ label{
             min-height: 600px;
             max-width: 450px; 
             height: 600px;
+            z-index: 0;
+
+            h2{
+                font-size: 1em;
+                font-weight: 300;
+                margin-left: 15px;
+            }
+
+            .musicList{
+                position: relative;
+                
+                .deckCardMusic{
+                    margin-bottom: 15px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+            }
+            
+            .deckCardDetails{   
+                .deckCardDetailsArtistName{
+                    font-size: 2.4em;
+                    font-weight: bold;
+                    margin-bottom: 0px;
+                    letter-spacing: 1px;
+                }
+                .deckCardDetailsArtistType, .deckCardDetailsArtistLocation{
+                    margin-left: 10px;
+                    font-size: .9em;
+                }
+    
+                .deckCardDetailsMusicTitle{
+                    font-size: 1em;
+                }
+    
+                .deckCardDetailsArtistPlayer{
+                    display: flex;
+    
+                    .deckCardDetailsTrackPlayer{
+                        .releaseDate{
+                            float: right;
+                        }
+    
+                        .deckCardDetailsTrackPlayerTitle{
+                            width: 100%;
+
+                            .trackTitle, .releaseDate{
+                                font-size: .8em;
+                            }
+                        }
+    
+                        .playBtn{
+                            width: 10%;
+                            padding: 5px;
+                        }
+    
+                        .timeline{
+                            width: 90%;
+                        }
+                    }
+    
+                    .deckCardDetailsTrackImage{
+                        img{
+                            width: 90%;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+
+            .textBox{
+                padding: 15px;
+                text-align: justify;
+                font-size: .8em;
+            }
+        
+            .followerCount{
+                display: flex;
+                justify-content: space-between;
+                padding-left: 15px;
+                padding-right: 15px;
+                text-align: center;
+                .followerCountNumber{
+                    font-weight: bold;
+                }
+                .followerCountText{
+                    display: block;
+                    font-weight: normal;
+                    font-size: .8em;
+                }
+            }        
+        }
+        .deckCard .sc-bxivhb{
+            /* position: absolute;
+            top: 60%; */
+            position: fixed;
+            bottom: 0;
+            background-color:rgba(66, 64, 64, .95);
+            opacity: .9;
+            width: 80% !important;
+            padding: 15px;
+            border-top-right-radius: 50px;
+            text-align: left;
+            color: #fff;
+            min-height: 600px;
+            max-width: 450px; 
+            //height: 600px;
+            transition: .5s transform ease-out;
+            background-size: 100% !important;
+            box-shadow: 3px 3px 3px 3px rgba(255,255,255,.2);
+
+            .clickOverlay{
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
 
             h2{
                 font-size: 1em;
@@ -220,6 +353,41 @@ label{
             }        
         }
 
+        .deckCard .sc-bxivhb:nth-child(1n){
+            margin-left: 60px;
+            margin-top: 190px;
+            transform: translateX(0px) translateY(310px) scale(1) rotate( 
+                0deg
+                 ) rotateX( 
+                0deg
+                 ) translateZ(0px) !important;
+        }
+        .deckCard .sc-bxivhb:nth-child(2n){
+            margin-left: 30px;
+            margin-top: 90px;
+            transform: translateX(0px) translateY(380px) scale(1) rotate( 
+                0deg
+                 ) rotateX( 
+                0deg
+                 ) translateZ(0px) !important;
+        }
+        .deckCard .sc-bxivhb:nth-child(3n){
+            margin-left: 0px;
+            margin-top: 0px;
+            transform: translateX(0px) translateY(450px) scale(1) rotate( 
+                0deg
+                 ) rotateX( 
+                0deg
+                 ) translateZ(0px) !important;
+        }
+
+        .deckCard .sc-bxivhb {
+            display: none;
+        }
+        .deckCard .sc-bxivhb:nth-child(-n+3){
+            display: block;
+        }
+
         .deckCard.selected{
             bottom: 0;
         }
@@ -227,16 +395,15 @@ label{
 
     .deckCards div:nth-child(1) .deckCard{
         margin-left: 20%;
-        //bottom: -86%;
         margin-bottom: -86%;
-        background-color: lighten( $cardGrey, 30% );
+        background-color: rgba(66, 64, 64, .95);
     }
 
     .deckCards div:nth-child(2) .deckCard{
         margin-left: 10%;
         //bottom: -76%;
         margin-bottom: -76%;
-        background-color: lighten( $cardGrey, 20% );
+        background-color: lighten( rgba(66, 64, 64, .95), 20% );
     }
 
     .deckCards div:nth-child(3) .deckCard{
@@ -244,7 +411,7 @@ label{
         left: 0px;
        // bottom: -66%;
         margin-bottom: -66%;
-        background-color: #959595;
+        background-color: rgba(66, 64, 64, .95);
     }
 }
 
@@ -355,3 +522,7 @@ label{
         background-color: lighten( $cardGrey, 20% );
     }
 }
+
+/* .raiseCard .sc-bxivhb{
+   transform: translateY(212px) !important; 
+} */
